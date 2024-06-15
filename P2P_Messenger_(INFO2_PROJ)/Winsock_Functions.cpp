@@ -133,6 +133,6 @@ recv(socket, dataBuffer, 1024, 0);
 return 0;
 
 }
-//int testFunction;
+
 //in//t send(SOCKET socket, string message )
 //send(socket, message.c_str(), message.size() + 1, 0)
