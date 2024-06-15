@@ -24,9 +24,16 @@ std::string IP1s = "192.168.1.102";
 
 int main()
 {
-	ServerStartup(IP1s, PORT);
+	bool scs;
+cout << "server or client? ";
+cin >> scs;
+if (scs)
 
-	//ClientStartup(IP1s, PORT);
+	ClientStartup(IP1s, PORT);
+
+else
+
+	ServerStartup(IP1s, PORT);
 
 	return 0;
 }
