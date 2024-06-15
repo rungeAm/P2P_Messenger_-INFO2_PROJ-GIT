@@ -131,15 +131,23 @@ char dataBuffer[1024] = { 0 };
 
 recv(socket, dataBuffer, sizeof(dataBuffer), 0);
 
-cout << "Message recieved: " << dataBuffer;
+std::string message = dataBuffer;
+
+cout << "Message recieved: " << message << " size of message: " << sizeof(message) << endl;
 return 0;
 }
 
 
-int send_(SOCKET socket,std::string buffer)
+int send_(SOCKET socket, void * data)
 {
-	send(socket, buffer.c_str(), buffer.length(), 0);
+	int Sent = send(socket, (const char*)data , sizeof(data), 0);
 
-	cout << "sent Message: " << buffer << endl;
+	if (Sent == SOCKET_ERROR)
+	{
+		cout << "send failed! Error:" << WSAGetLastError() << endl;
+		return 0;
+	}
+
+	cout << "sent Message: " << data << endl;
 	return 0;
 }
