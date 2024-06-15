@@ -131,17 +131,14 @@ char dataBuffer[1024] = { 0 };
 
 recv(socket, dataBuffer, sizeof(dataBuffer), 0);
 
-if (dataBuffer[3] == 0) cout << "Nothing recieved! " << endl;
-else
-cout << "Message recieved: " << dataBuffer << endl;
-
+cout << "Message recieved: " << dataBuffer;
 return 0;
-
 }
+
 
 int send_(SOCKET socket,std::string buffer)
 {
-	send(socket, buffer.c_str(), sizeof(buffer), 0);
+	send(socket, buffer.c_str(), buffer.length(), 0);
 
 	cout << "sent Message: " << buffer << endl;
 	return 0;
