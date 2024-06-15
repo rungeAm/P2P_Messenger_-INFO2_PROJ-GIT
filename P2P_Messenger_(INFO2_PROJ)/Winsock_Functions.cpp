@@ -125,13 +125,13 @@ int connect_(sockaddr_in sockaddr, SOCKET socket)
 	}
 }
 
- int recieve_(SOCKET socket) 
+std::string recieve_(SOCKET socket) 
 {
 char dataBuffer[1024] = { 0 };
 
 int Recv = recv(socket, dataBuffer, 1024, 0);
 
-std::string message = static_cast<std::string>(dataBuffer);
+std::string message (dataBuffer);
 
 if (Recv == SOCKET_ERROR)
 {
@@ -142,12 +142,7 @@ else
 
 cout << "Message recieved: " << message << endl;
 
-
-
-
-
-cout << "Message recieved: " << message << " size of message: " << sizeof(message) << endl;
-return 0;
+return message;
 }
 
 
