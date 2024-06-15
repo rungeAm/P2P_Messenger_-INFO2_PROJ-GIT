@@ -50,7 +50,7 @@ int ServerStartup(std::string IP, int PORT)
 	accept_(serverSocket);
 
 	//...................................................
-	recieve_(serverSocket, 0.7);
+	recieve_(serverSocket);
 
 
 	return 0;
