@@ -125,24 +125,33 @@ int connect_(sockaddr_in sockaddr, SOCKET socket)
 	}
 }
 
- int recieve_(SOCKET socket, void * destination) 
+ int recieve_(SOCKET socket) 
 {
 char dataBuffer[1024] = { 0 };
 
-int Recv = recv(socket, (char*)destination, 1024, 0);
-if (Recv == SOCKET_ERROR)
-cout << "Recv Error: " << WSAGetLastError() << endl;
-else
-cout << "Message recieved!" << endl;
+int Recv = recv(socket, dataBuffer, 1024, 0);
 
-std::string message = dataBuffer;
+std::string message = static_cast<std::string>(dataBuffer);
+
+if (Recv == SOCKET_ERROR)
+{
+	cout << "Recv Error: " << WSAGetLastError() << endl;
+	closesocket(socket);
+}
+else
+
+cout << "Message recieved: " << message << endl;
+
+
+
+
 
 cout << "Message recieved: " << message << " size of message: " << sizeof(message) << endl;
 return 0;
 }
 
 
-int send_(SOCKET socket, void * data)
+int send_(SOCKET socket, const char * data)
 {
 	int Sent = send(socket, (const char*)data , 1024, 0);
 
@@ -151,7 +160,10 @@ int send_(SOCKET socket, void * data)
 		cout << "send failed! Error:" << WSAGetLastError() << endl;
 		return 0;
 	}
+	else if (Sent == 0)
 
-	cout << "sent Message: " << data << endl;
-	return 0;
+	{
+		cout << "sent Message: " << data << endl;
+		return 0;
+	}
 }

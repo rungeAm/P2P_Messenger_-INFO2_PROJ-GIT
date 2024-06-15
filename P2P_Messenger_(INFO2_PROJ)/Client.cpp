@@ -40,8 +40,9 @@ int ClientStartup(std::string IP, int PORT)
 	connect_(clientSockaddr, clientSocket);
 
 	//...................................................
-	char buffer[1024];
-	strcpy_s(buffer, "Hello World!\n");
+	char buffer[1024] = { 0 };
+	string message = "Hello World! ";
+	strcpy_s(buffer ,message.c_str());			//stringcopy 
 
 	send_(clientSocket, buffer);
 }
