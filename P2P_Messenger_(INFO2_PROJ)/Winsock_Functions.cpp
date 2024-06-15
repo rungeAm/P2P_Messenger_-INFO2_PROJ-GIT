@@ -7,6 +7,7 @@
 #include <ws2tcpip.h> //for InetPton
 #include <sstream>
 #include "header.h"
+#include <vector>
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -124,13 +125,15 @@ int connect_(sockaddr_in sockaddr, SOCKET socket)
 	}
 }
 
-std::string recieve_(SOCKET socket) 
+ int recieve_(SOCKET socket) 
 {
 char dataBuffer[1024] = { 0 };
 
 recv(socket, dataBuffer, 1024, 0);
 
-return dataBuffer;
+cout << "Message recieved: " << dataBuffer << endl;
+
+return 0;
 
 }
 
@@ -138,13 +141,6 @@ int send_(SOCKET socket, const char* buffer)
 {
 	send(socket, buffer, strlen(buffer), 0);
 
-	if (send == 0)
-	{
-		cout << "Message sent successfully! " << endl;
-	}
-	else
-	{
-		cout << "Error sending message: " << WSAGetLastError() << endl;
-	}
+	cout << "Message: " << buffer << endl;
 	return 0;
 }
