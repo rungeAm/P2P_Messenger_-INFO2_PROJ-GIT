@@ -50,8 +50,11 @@ int ServerStartup(std::string IP, int PORT)
 	accept_(serverSocket);
 
 	//...................................................
-	recieve_(serverSocket);
+	string message = recieve_(serverSocket);
+	cout << "Message: " << message << endl;
 
+
+	//...................................................
 
 	return 0;
 }

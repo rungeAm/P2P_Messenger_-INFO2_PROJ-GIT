@@ -124,15 +124,18 @@ int connect_(sockaddr_in sockaddr, SOCKET socket)
 	}
 }
 
-int recieve_(SOCKET socket) 
+std::string recieve_(SOCKET socket) 
 {
 char dataBuffer[1024] = { 0 };
 
 recv(socket, dataBuffer, 1024, 0);
 
-return 0;
+return dataBuffer;
 
 }
-//TEST
-//int send(SOCKET socket, string message )
-//send(socket, message.c_str(), message.size() + 1, 0)
+
+int send_(SOCKET socket, const char* buffer)
+{
+	send(socket, buffer, sizeof(buffer), 0);
+	return 0;
+}

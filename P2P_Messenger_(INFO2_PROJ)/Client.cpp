@@ -40,4 +40,6 @@ int ClientStartup(std::string IP, int PORT)
 	connect_(clientSockaddr, clientSocket);
 
 	//...................................................
+	const char* buffer = ("Hello World!");
+	send_(clientSocket, buffer);
 }
