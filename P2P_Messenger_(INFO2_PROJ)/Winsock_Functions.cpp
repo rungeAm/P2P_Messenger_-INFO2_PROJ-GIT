@@ -136,6 +136,6 @@ return dataBuffer;
 
 int send_(SOCKET socket, const char* buffer)
 {
-	send(socket, buffer, sizeof(buffer), 0);
+	send(socket, buffer, strlen(buffer), 0);
 	return 0;
 }
