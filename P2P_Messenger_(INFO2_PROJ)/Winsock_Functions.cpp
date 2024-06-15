@@ -137,5 +137,14 @@ return dataBuffer;
 int send_(SOCKET socket, const char* buffer)
 {
 	send(socket, buffer, strlen(buffer), 0);
+
+	if (send == 0)
+	{
+		cout << "Message sent successfully! " << endl;
+	}
+	else
+	{
+		cout << "Error sending message: " << WSAGetLastError() << endl;
+	}
 	return 0;
 }
