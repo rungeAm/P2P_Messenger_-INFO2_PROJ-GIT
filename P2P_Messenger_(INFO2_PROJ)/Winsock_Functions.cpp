@@ -124,7 +124,7 @@ int connect_(sockaddr_in sockaddr, SOCKET socket)
 	}
 }
 
-int recieve_(SOCKET socket, ) 
+int recieve_(SOCKET socket) 
 {
 char dataBuffer[1024] = { 0 };
 

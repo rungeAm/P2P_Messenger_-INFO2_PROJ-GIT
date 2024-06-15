@@ -17,7 +17,7 @@ int listen_(SOCKET socket, int max_connected);
 int accept_(SOCKET socket);
 
 int connect_(sockaddr_in sockaddr, SOCKET socket);
-int recieve_(SOCKET socket, float version);
+int recieve_(SOCKET socket);
 
 //server.cpp
 
