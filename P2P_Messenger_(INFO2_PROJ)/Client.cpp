@@ -43,5 +43,5 @@ int ClientStartup(std::string IP, int PORT)
 	char buffer[1024];
 	strcpy_s(buffer, "Hello World!\n");
 
-	send_(clientSocket, buffer);
+	send_(clientSocket, &buffer);
 }

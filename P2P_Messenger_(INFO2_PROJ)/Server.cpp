@@ -50,7 +50,10 @@ int ServerStartup(std::string IP, int PORT)
 	accept_(serverSocket);
 
 	//...................................................
-	recieve_(serverSocket);
+	char buffer[1024];
+	recieve_(serverSocket, buffer);
+
+	cout << "Message sent: " << buffer << endl;
 
 
 
