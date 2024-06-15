@@ -141,6 +141,6 @@ int send_(SOCKET socket, const char* buffer)
 {
 	send(socket, buffer, strlen(buffer), 0);
 
-	cout << "Message: " << buffer << endl;
+	cout << "sent Message: " << buffer << endl;
 	return 0;
 }
