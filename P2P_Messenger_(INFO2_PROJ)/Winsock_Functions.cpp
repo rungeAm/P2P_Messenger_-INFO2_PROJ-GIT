@@ -129,8 +129,10 @@ int connect_(sockaddr_in sockaddr, SOCKET socket)
 {
 char dataBuffer[1024] = { 0 };
 
-recv(socket, dataBuffer, 1024, 0);
+recv(socket, dataBuffer, sizeof(dataBuffer), 0);
 
+if (dataBuffer[3] == 0) cout << "Nothing recieved! " << endl;
+else
 cout << "Message recieved: " << dataBuffer << endl;
 
 return 0;
