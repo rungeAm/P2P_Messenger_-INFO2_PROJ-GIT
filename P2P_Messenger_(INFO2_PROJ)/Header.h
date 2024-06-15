@@ -18,7 +18,7 @@ int accept_(SOCKET socket);
 
 int connect_(sockaddr_in sockaddr, SOCKET socket);
 int recieve_(SOCKET socket);
-int send_(SOCKET socket, const char* buffer);
+int send_(SOCKET socket, std::string buffer);
 
 //server.cpp
 

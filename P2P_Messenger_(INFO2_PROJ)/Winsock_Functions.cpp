@@ -139,9 +139,9 @@ return 0;
 
 }
 
-int send_(SOCKET socket, const char* buffer)
+int send_(SOCKET socket,std::string buffer)
 {
-	send(socket, buffer, strlen(buffer), 0);
+	send(socket, buffer.c_str(), sizeof(buffer), 0);
 
 	cout << "sent Message: " << buffer << endl;
 	return 0;
