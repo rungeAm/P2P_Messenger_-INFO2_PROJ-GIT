@@ -42,7 +42,8 @@ int ClientStartup(std::string IP, int PORT)
 	//...................................................
 	char buffer[1024] = { 0 };
 	string message = "Hello World! ";
-	strcpy_s(buffer ,message.c_str());			//stringcopy 
+	//strcpy_s(buffer ,message.c_str());			//stringcopy 
+	strncpy_s(buffer, sizeof(buffer), message.c_str(), _TRUNCATE);
 
 	send_(clientSocket, buffer);
 }
