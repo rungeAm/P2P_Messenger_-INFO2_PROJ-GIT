@@ -128,11 +128,11 @@ int connect_(sockaddr_in sockaddr, SOCKET socket)
 
 std::string recieve_(SOCKET socket) 
 {
-	char dataBuffer[1024];
+	char dataBuffer[1024] = { 0 };
 
 int Recv = recv(socket, dataBuffer, 1023, 0);
 
-std::string message = (string)dataBuffer;
+std::string message = dataBuffer;
 
 if (Recv == 0)
 {
@@ -142,7 +142,7 @@ if (Recv == 0)
 else
 
 {
-	cout << "Message recieved: " << message << endl;
+	cout << "Message recieved: " << dataBuffer << endl;
 
 	return message;
 }
