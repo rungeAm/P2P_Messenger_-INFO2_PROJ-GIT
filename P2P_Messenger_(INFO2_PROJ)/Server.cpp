@@ -52,8 +52,9 @@ int ServerStartup(std::string IP, int PORT)
 	//...................................................
 	char buffer[1024] = "";
 	//recieve_(serverSocket);
-	recv(acceptSocket, buffer, 1023, 0);
-
+	int recvErr = recv(acceptSocket, buffer, 1023, 0);
+	if (recvErr == SOCKET_ERROR) cout << "recieve error: " << WSAGetLastError();
+	else
 	cout << "Message sent: " << buffer << endl;
 
 
