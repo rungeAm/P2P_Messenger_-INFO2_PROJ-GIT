@@ -132,7 +132,7 @@ std::string recieve_(SOCKET socket)
 
 int Recv = recv(socket, dataBuffer, 1023, 0);
 
-std::string message ((string)dataBuffer);
+std::string message = dataBuffer;
 
 if (Recv == 0)
 {
@@ -154,6 +154,7 @@ int send_(SOCKET socket, std::string data)
 
 	
 	int Sent = send(socket, data.c_str(), data.length(), 0);
+	cout << "trying to send!" << endl;
 
 	if (Sent == SOCKET_ERROR)
 	{
