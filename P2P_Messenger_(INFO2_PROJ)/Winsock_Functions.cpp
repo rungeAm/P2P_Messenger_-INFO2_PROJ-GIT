@@ -127,7 +127,7 @@ int connect_(sockaddr_in sockaddr, SOCKET socket)
 
 std::string recieve_(SOCKET socket) 
 {
-char dataBuffer[1024] = "DEFAULT";
+	char dataBuffer[1024];
 
 int Recv = recv(socket, dataBuffer, 1023, 0);
 
