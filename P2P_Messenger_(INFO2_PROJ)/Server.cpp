@@ -51,7 +51,8 @@ int ServerStartup(std::string IP, int PORT, float version)
 	{
 		listen_(serverSocket, 10);
 		SOCKET acceptSocket = accept_(serverSocket);
-		recieve_(acceptSocket);
+		string recieved = recieve_(acceptSocket);
+		cout << "recieved: " << recieved;
 
 		//...................................................
 		/*char buffer[1024] = "";
