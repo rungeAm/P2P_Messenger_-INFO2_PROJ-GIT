@@ -149,7 +149,7 @@ return message;
 int send_(SOCKET socket, const char * data)
 {
 	cout << "message to send2: " << data << endl;
-	int Sent = send(socket, (const char*)data , 1024, 0);
+	int Sent = send(socket, data , strlen(data), 0);
 
 	if (Sent == SOCKET_ERROR)
 	{
