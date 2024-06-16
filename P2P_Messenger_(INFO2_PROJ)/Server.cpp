@@ -44,11 +44,12 @@ int ServerStartup(std::string IP, int PORT, float version)
 	bindSocket(serverSockaddr,serverSocket, IP, PORT);
 
 	//...................................................
-	listen_(serverSocket, 10);
+	
 
 	for (int i = 0; i == i; i++)
 	//...................................................
 	{
+		listen_(serverSocket, 10);
 		SOCKET acceptSocket = accept_(serverSocket);
 
 		//...................................................
