@@ -20,6 +20,7 @@ int PORT = 26000;
 #define IP1 192.168.1.102
 std::string IP1s = "192.168.238.114";
 std::string IP2s = "192.168.238.110";
+std:: string IP3s = "192.168.238.73";
 
 //-----------------------------------------------------------------
 
@@ -30,7 +31,7 @@ cout << "server or client? ";
 cin >> scs;
 if (scs)
 
-	ClientStartup(IP1s, PORT);
+	ClientStartup(IP3s, PORT);
 
 else
 
