@@ -141,9 +141,11 @@ if (Recv == 0)
 }
 else
 
-cout << "Message recieved: " << message << endl;
+{
+	cout << "Message recieved: " << message << endl;
 
-return message;
+	return message;
+}
 }
 
 
