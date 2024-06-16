@@ -46,9 +46,9 @@ int ServerStartup(std::string IP, int PORT, float version)
 	//...................................................
 	
 
-	for (int i = 0; i == i; i++)
+
 	//...................................................
-	{
+	
 		listen_(serverSocket, 10);
 		SOCKET acceptSocket = accept_(serverSocket);
 		string recieved = recieve_(acceptSocket);
@@ -87,7 +87,7 @@ int ServerStartup(std::string IP, int PORT, float version)
 
 		}
 		*/
-	}	
+	
 
 
 	//...................................................
