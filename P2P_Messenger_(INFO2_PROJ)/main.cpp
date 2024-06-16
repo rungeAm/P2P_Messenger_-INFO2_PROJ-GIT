@@ -18,8 +18,8 @@ using std::string;
 int PORT = 26000;
 #define selfIP 127.0.0.1
 #define IP1 192.168.1.102
-std::string IP1s = "192.168.1.102";
-std::string IP2s = "192.168.1.105";
+std::string IP1s = "192.168.238.114";
+std::string IP2s = "192.168.238.110";
 
 //-----------------------------------------------------------------
 

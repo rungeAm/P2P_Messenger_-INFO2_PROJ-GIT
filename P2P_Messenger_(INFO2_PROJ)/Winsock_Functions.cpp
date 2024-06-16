@@ -129,11 +129,11 @@ std::string recieve_(SOCKET socket)
 {
 char dataBuffer[1024] = { 0 };
 
-int Recv = recv(socket, dataBuffer, 1024, 0);
+int Recv = recv(socket, dataBuffer, 1023, 0);
 
 std::string message (dataBuffer);
 
-if (Recv == SOCKET_ERROR)
+if (Recv == 0)
 {
 	cout << "Recv Error: " << WSAGetLastError() << endl;
 	closesocket(socket);
