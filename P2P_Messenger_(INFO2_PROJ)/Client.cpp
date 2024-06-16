@@ -40,11 +40,13 @@ int ClientStartup(std::string IP, int PORT)
 	connect_(clientSockaddr, clientSocket);
 
 	//...................................................
-	char buffer[1024] = { 0 };
+	char buffer[1024] = "";
 	string message = "Hello World! ";
 	strcpy_s(buffer ,message.c_str());			//stringcopy 
 
+	cout << "message to send: " << buffer;
+
 	//strncpy_s(buffer, sizeof(buffer)-1, message.c_str(), _TRUNCATE);
-	cout << "Trying to send" << endl;
+	//cout << "Trying to send" << endl;
 	send_(clientSocket, buffer);
 }

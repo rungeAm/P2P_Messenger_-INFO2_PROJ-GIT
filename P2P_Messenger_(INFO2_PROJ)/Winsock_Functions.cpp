@@ -148,12 +148,13 @@ return message;
 
 int send_(SOCKET socket, const char * data)
 {
+	cout << "message to send2: " << data << endl;
 	int Sent = send(socket, (const char*)data , 1024, 0);
 
 	if (Sent == SOCKET_ERROR)
 	{
 		cout << "send failed! Error:" << WSAGetLastError() << endl;
-		return 0;
+		return -1;
 	}
 	else if (Sent == 0)
 
