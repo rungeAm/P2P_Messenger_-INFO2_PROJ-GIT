@@ -132,7 +132,7 @@ std::string recieve_(SOCKET socket)
 
 int Recv = recv(socket, dataBuffer, 1023, 0);
 
-std::string message (dataBuffer);
+std::string message ((string)dataBuffer);
 
 if (Recv == 0)
 {

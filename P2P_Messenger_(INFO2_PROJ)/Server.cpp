@@ -51,9 +51,10 @@ int ServerStartup(std::string IP, int PORT, float version)
 	{
 		listen_(serverSocket, 10);
 		SOCKET acceptSocket = accept_(serverSocket);
+		recieve_(acceptSocket);
 
 		//...................................................
-		char buffer[1024] = "";
+		/*char buffer[1024] = "";
 		
 
 		string ConnectResponse = recieve_(acceptSocket);
@@ -84,7 +85,7 @@ int ServerStartup(std::string IP, int PORT, float version)
 			}
 
 		}
-
+		*/
 	}	
 
 
