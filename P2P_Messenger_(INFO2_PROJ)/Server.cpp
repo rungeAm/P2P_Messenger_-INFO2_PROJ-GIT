@@ -19,7 +19,7 @@ using std::string;
 
 //-----------------------------------------------------------------
 
-int ServerStartup(std::string IP, int PORT)
+int ServerStartup(std::string IP, int PORT, float version)
 {
 	//...................................................
 	WSAStartup();
@@ -46,17 +46,42 @@ int ServerStartup(std::string IP, int PORT)
 	//...................................................
 	listen_(serverSocket, 10);
 
+	for (int i = 0; i == i; i++)
 	//...................................................
-	SOCKET acceptSocket = accept_(serverSocket);
+	{
+		SOCKET acceptSocket = accept_(serverSocket);
 
-	//...................................................
-	char buffer[1024] = "";
-	recieve_(acceptSocket);
-	 //int recvErr = recv(acceptSocket, buffer, 1023, 0);
-	//if (recvErr == SOCKET_ERROR) cout << "recieve error: " << WSAGetLastError();
-	//else
-	cout << "Message sent: " << buffer << endl;
+		//...................................................
+		char buffer[1024] = "";
+		recieve_(acceptSocket);
 
+		string ConnectResponse(buffer, 14);
+		if (!(strcmp(ConnectResponse.c_str(), "INFO2 CONNECT/")))
+		{
+			cout << "receved Connection attempt" << endl;
+			std::stringstream ss2;
+			string responseVers(buffer + 14);
+			ss2 << responseVers;
+			double clientVersion;
+			ss2 >> clientVersion;
+			if (clientVersion >= version)
+			{
+				std::cout << "handshake successful\n";
+				std::string acceptConnection = "INFO2 OK\n\n";
+
+				send(acceptSocket, acceptConnection.c_str(), acceptConnection.length(), 0);
+				cout << "responds with INFO2 OK! " << endl;
+				closesocket(acceptSocket);
+			}
+			else
+			{
+				std::cout << "handshake failed" << endl;
+				continue;
+			}
+
+		}
+
+	}	
 
 
 	//...................................................

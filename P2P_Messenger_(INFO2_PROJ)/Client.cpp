@@ -14,7 +14,7 @@ using std::string;
 
 
 //-----------------------------------------------------------------
-int ClientStartup(std::string IP, int PORT)
+int ClientStartup(std::string IP, int PORT, float version)
 {
 	//...................................................
 	WSAStartup();
@@ -40,14 +40,16 @@ int ClientStartup(std::string IP, int PORT)
 	connect_(clientSockaddr, clientSocket);
 
 	//...................................................
-	
-	 string message = "Hello World! ";
+
+	std::stringstream ss;
+	string Sversion;
+	ss << version;
+	ss >> Sversion;
+
+	string message = "INFO2 CONNECT/" + Sversion + "\n\n";;
 	
 
 	cout << "message to send: " << message;
 
-	//strncpy_s(buffer, sizeof(buffer)-1, message.c_str(), _TRUNCATE);
-	//cout << "Trying to send" << endl;
-	//send(clientSocket, message.c_str(), message.length() , 0);
 	send_(clientSocket, message);
 }

@@ -31,11 +31,11 @@ cout << "server or client? ";
 cin >> scs;
 if (scs)
 
-	ClientStartup(IP3s, PORT);
+	ClientStartup(IP3s, PORT, 0.7);
 
 else
 
-	ServerStartup(IP1s, PORT);
+	ServerStartup(IP1s, PORT, 0.7);
 
 	return 0;
 }

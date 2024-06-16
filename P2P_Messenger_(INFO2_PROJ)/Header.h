@@ -22,8 +22,8 @@ int send_(SOCKET socket, std::string data);
 
 //server.cpp
 
-int ServerStartup(std::string IP, int PORT);
+int ServerStartup(std::string IP, int PORT, float version);
 
 //Client.cpp
 
-int ClientStartup(std::string IP, int PORT);
+int ClientStartup(std::string IP, int PORT, float version);
