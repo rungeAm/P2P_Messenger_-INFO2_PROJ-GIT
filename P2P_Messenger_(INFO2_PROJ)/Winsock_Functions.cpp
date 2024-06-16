@@ -146,10 +146,10 @@ return message;
 }
 
 
-int send_(SOCKET socket, const char * &data)
+int send_(SOCKET socket, const char * data)
 {
-
-	int Sent = send(socket, data , strlen(data), 0);
+	data = "Hello World2!";
+	int Sent = send(socket, data , strlen(data)-1, 0);
 
 	if (Sent == SOCKET_ERROR)
 	{
