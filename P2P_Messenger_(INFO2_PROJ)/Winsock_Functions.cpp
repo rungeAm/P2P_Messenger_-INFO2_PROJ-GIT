@@ -90,7 +90,7 @@ int listen_(SOCKET socket, int max_connected)
 	}
 }
 
-int accept_(SOCKET socket)
+SOCKET accept_(SOCKET socket)
 {
 	SOCKET acceptSocket;
 	acceptSocket = accept(socket, NULL, NULL);
@@ -105,6 +105,7 @@ int accept_(SOCKET socket)
 	else
 	{
 		cout << "Accept successful!" << endl;
+		return acceptSocket;
 	}
 
 }
