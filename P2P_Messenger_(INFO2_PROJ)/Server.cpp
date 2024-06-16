@@ -47,12 +47,12 @@ int ServerStartup(std::string IP, int PORT)
 	listen_(serverSocket, 10);
 
 	//...................................................
-	accept_(serverSocket);
+	SOCKET acceptSocket = accept_(serverSocket);
 
 	//...................................................
 	char buffer[1024] = "";
 	//recieve_(serverSocket);
-	recv(serverSocket, buffer, 1023, 0);
+	recv(acceptSocket, buffer, 1023, 0);
 
 	cout << "Message sent: " << buffer << endl;
 
