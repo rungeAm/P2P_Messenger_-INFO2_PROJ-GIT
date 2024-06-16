@@ -48,6 +48,6 @@ int ClientStartup(std::string IP, int PORT)
 
 	//strncpy_s(buffer, sizeof(buffer)-1, message.c_str(), _TRUNCATE);
 	//cout << "Trying to send" << endl;
-	send(clientSocket, message.c_str(), message.length() , 0);
-	//send_(clientSocket, message);
+	//send(clientSocket, message.c_str(), message.length() , 0);
+	send_(clientSocket, message);
 }

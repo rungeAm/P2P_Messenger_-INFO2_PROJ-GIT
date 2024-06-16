@@ -147,11 +147,11 @@ return message;
 }
 
 
-int send_(SOCKET socket, const char * data)
+int send_(SOCKET socket, std::string data)
 {
 
-	//data = "Hello World2!";
-	int Sent = send(socket, data , strlen(data)-1, 0);
+	
+	int Sent = send(socket, data.c_str(), data.length(), 0);
 
 	if (Sent == SOCKET_ERROR)
 	{
