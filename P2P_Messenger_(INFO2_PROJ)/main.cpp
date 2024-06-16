@@ -31,7 +31,7 @@ cout << "server or client? ";
 cin >> scs;
 if (scs)
 
-	ClientStartup(IP2s, PORT, 0.7);
+	ClientStartup(IP1s, PORT, 0.7);
 
 else
 

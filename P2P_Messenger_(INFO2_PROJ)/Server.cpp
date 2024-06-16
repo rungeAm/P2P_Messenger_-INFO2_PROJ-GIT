@@ -54,17 +54,19 @@ int ServerStartup(std::string IP, int PORT, float version)
 
 		//...................................................
 		char buffer[1024] = "";
-		recieve_(acceptSocket);
+		
 
-		string ConnectResponse(buffer, 14);
+		string ConnectResponse = recieve_(acceptSocket);
 		if (!(strcmp(ConnectResponse.c_str(), "INFO2 CONNECT/")))
 		{
-			cout << "receved Connection attempt" << endl;
+			cout << "recieved Connection attempt" << endl;
+
 			std::stringstream ss2;
 			string responseVers(buffer + 14);
 			ss2 << responseVers;
 			double clientVersion;
 			ss2 >> clientVersion;
+			cout << "test!" << endl;
 			if (clientVersion >= version)
 			{
 				std::cout << "handshake successful\n";
