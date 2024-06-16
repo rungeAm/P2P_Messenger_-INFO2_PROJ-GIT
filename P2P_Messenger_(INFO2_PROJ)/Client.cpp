@@ -46,10 +46,10 @@ int ClientStartup(std::string IP, int PORT, float version)
 	ss << version;
 	ss >> Sversion;
 
-	string message = "INFO2 CONNECT/" + Sversion + "\n\n";;
-	
+	string message = "INFO2 CONNECT/" + Sversion + "\n\n";
+	message = "Hello WOrld!";
 
-	cout << "message to send: " << message;
+	//cout << "message to send: " << message;
 
 	send_(clientSocket, message);
 }

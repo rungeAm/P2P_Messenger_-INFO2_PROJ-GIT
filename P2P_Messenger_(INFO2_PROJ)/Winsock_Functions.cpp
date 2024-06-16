@@ -156,7 +156,7 @@ int send_(SOCKET socket, std::string data)
 	int Sent = send(socket, data.c_str(), data.length(), 0);
 	cout << "trying to send!" << endl;
 
-	if (Sent == SOCKET_ERROR)
+	if (Sent != 0)
 	{
 		cout << "send failed! Error:" << WSAGetLastError() << endl;
 		return -1;
