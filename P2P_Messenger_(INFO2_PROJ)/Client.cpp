@@ -44,7 +44,7 @@ int ClientStartup(std::string IP, int PORT)
 	 const char* message = "Hello World! ";
 	
 
-	cout << "message to send: " << *message;
+	cout << "message to send: " << message;
 
 	//strncpy_s(buffer, sizeof(buffer)-1, message.c_str(), _TRUNCATE);
 	//cout << "Trying to send" << endl;

@@ -127,7 +127,7 @@ int connect_(sockaddr_in sockaddr, SOCKET socket)
 
 std::string recieve_(SOCKET socket) 
 {
-char dataBuffer[1024] = { 0 };
+char dataBuffer[1024] = "DEFAULT";
 
 int Recv = recv(socket, dataBuffer, 1023, 0);
 
@@ -146,9 +146,9 @@ return message;
 }
 
 
-int send_(SOCKET socket, const char * data)
+int send_(SOCKET socket, const char * &data)
 {
-	cout << "message to send2: " << data << endl;
+
 	int Sent = send(socket, data , strlen(data), 0);
 
 	if (Sent == SOCKET_ERROR)
@@ -159,7 +159,7 @@ int send_(SOCKET socket, const char * data)
 	else if (Sent == 0)
 
 	{
-		cout << "sent Message: " << data << endl;
+		cout << "send sucessfull! Sent Message: " << data << endl;
 		return 0;
 	}
 }
